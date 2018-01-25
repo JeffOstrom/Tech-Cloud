@@ -10,10 +10,10 @@ var request = require("request");
 // Set mongoose to leverage built in JavaScript 
 mongoose.Promise = Promise;
 
-const PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 
 // Initialize Express
-const APP = express();
+var APP = express();
 
 // Use body parser
 APP.use(bodyParser.urlencoded({extended: false}));
@@ -22,18 +22,18 @@ APP.use(bodyParser.urlencoded({extended: false}));
 APP.use(express.static("public"));
 
 // Set Handlebars.
-APP.engine("handlebars", EXPHBS({ defaultLayout: "main" }));
+APP.engine("handlebars", exphbs({ defaultLayout: "main" }));
 APP.set("view engine", "handlebars");
 
 
 // Database configuration with mongoose
 if(process.env.MONGODB_URI)
 {
-	mongoose.connect(process.env.YOUR MONGODB_URI HERE);
+	mongoose.connect(process.env.MONGODB_URI);
 }
 else
 {
-	mongoose.connect("mongodb://localhost/YOUR DB NAME HERE");
+	mongoose.connect("mongodb://localhost/mongo-scrape");
 }	
 
 var db = mongoose.connection;
@@ -51,7 +51,8 @@ db.once("open", function() {
 // Routes
 // ======
 var routes = require("./controllers/routes.js");
-app.use("/", routes);
+APP.use(routes)
+
 
 // Listen on port 3000
 APP.listen(PORT, function() {

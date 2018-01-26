@@ -10,10 +10,9 @@ var Article = require("../models/Article.js");
 
 //GET request to scrape Techcrunch website
 router.get("/", function(req, res) {
-	   console.log("request to my server at /");
 //First, we grab the body of the html with request
   request("https://techcrunch.com", function(error, response, html) {
-       console.log("request to techcrunch");
+      
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(html);
     // Now, we grab every h2 within an article tag, and do the following:
@@ -47,12 +46,15 @@ router.get("/", function(req, res) {
   });
   // Tell the browser that we finished scraping the text
   res.render("index");
+ 
 });
+
+
 
 	//scrape
 	//save to db
 	//query db 
-	//render hb
+	//render 
 
 	// scrape
 	// save to db

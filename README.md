@@ -1,9 +1,9 @@
 Synopsis
 -------------------------------------------------------------------------------------
 
-- Discover the news daily and save your top favorite articles 
+- Discover top Tech news daily and save your top favorite articles 
 
-- This web app gives users the freedom to scrape current news from website
+- This web app gives users the freedom to scrape current news from website www.techcrunch.com
 
 - Go read some news! Check it out! https://jeffostrom.github.io/mongo-scrape/
 

@@ -20,7 +20,7 @@ var ArticleSchema = new Schema({
   // This only saves multiple comment's ObjectId, ref refers to the Note model
   note: [{
     type: Schema.Types.ObjectId,
-    ref: "Comment"
+    ref: "Note"
   }]
 });
 

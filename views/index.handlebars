@@ -1,5 +1,6 @@
+<!--Layout Customized HTML-->
 <div class="jumbotron">
-  <h1 class="display-4 text-center">Tech Cloud</h1>
+  <h1 class="display-4 text-center"><img src="assets/images/Logomakr3.png">Tech Cloud</h1>
   	<p class="lead- text-center">Latest Tech News & Industry Updates</p>
   <hr class="my-4">
 </div>
@@ -9,11 +10,12 @@
 <div class="container">
 	<div class="row">
 	  <div id="wrapper">
-      <h1>Articles</h1>
+      <h1 id="title">Articles</h1>
+      <br>
 
       <div id="comments">
         {{#each articles}}
-        <h2><a href={{link}}>{{title}}</a></h2>
+        <h2><a href={{link}} id="art">{{title}}</a></h2>
         <div>{{note}}</div>
         {{/each}}
       </div>

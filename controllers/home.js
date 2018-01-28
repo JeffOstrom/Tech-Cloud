@@ -8,7 +8,7 @@ var Article = require("../models/Article.js");
 router.get('/', function(req, res) {
 
 	// Grab every doc in the Articles array
-	Article.find({}).limit(20)
+	Article.find({}).limit(15)
 	.then(function(articles) {
 
 			res.render('index', {articles:articles});

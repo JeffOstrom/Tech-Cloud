@@ -1,5 +1,52 @@
+/*html/body background layout*/
+html, body {
+	background-image: url(../images/cloud.jpg);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+} 
 
 h1{
-	color:blue;
+	color:white;
 }
 
+p{
+	color: white;
+}
+
+/*Jumbotron background layout */
+.jumbotron{
+	background: rgb(37, 36, 36);
+}
+/* TC logo sizing */
+img{
+	width: 15%;
+}
+
+/* hr jumbotron line*/
+.my-4{
+	background: rgb(50, 135, 245);
+}
+
+/*article*/
+#art{
+	color: blue;
+	font-size: 19px;
+}
+
+/*title header for articles section*/
+#title{
+	color: black;
+}
+/*article container background*/
+.container{
+	background: rgb(230, 242, 248);
+
+}
+
+/*footer layout customize */
+.footer{
+	font-weight: bold;
+	color: rgb(7, 1, 1);
+}

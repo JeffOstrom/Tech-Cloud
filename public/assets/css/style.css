@@ -7,10 +7,12 @@ html, body {
     height: 100%;
 } 
 
+/*Main font header*/
 h1{
 	color:white;
 }
 
+/* font*/
 p{
 	color: white;
 }
@@ -37,8 +39,10 @@ img{
 
 /*title header for articles section*/
 #title{
+	font-family: 'Audiowide', cursive;
 	color: black;
 }
+
 /*article container background*/
 .container{
 	background: rgb(230, 242, 248);

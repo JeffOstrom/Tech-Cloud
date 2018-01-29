@@ -16,7 +16,9 @@ h1{
 p{
 	color: black;
 }
-
+text-center{
+	color: white;
+}
 /*Jumbotron background layout */
 .jumbotron{
 	background: rgb(37, 36, 36);
@@ -24,6 +26,17 @@ p{
 /* TC logo sizing */
 img{
 	width: 15%;
+}
+
+#bar{
+	color: gray;
+}
+#cloud{
+	width:4%;
+}
+/*footer logo*/
+#cloud2{
+	width:2%;
 }
 
 /* hr jumbotron line*/
@@ -46,9 +59,23 @@ img{
 /*article container background*/
 .container{
 	background: rgb(230, 242, 248);
+}
+
+/*inside body/wrapper text area*/
+#wrapper{
+	padding: 10px;
 
 }
 
+/*form title section*/
+.form-group{
+	width: 40%;
+}
+
+/*form comment section */
+#input{
+	height: 70px;
+}
 /*footer layout customize */
 .footer{
 	font-weight: bold;

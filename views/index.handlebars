@@ -1,7 +1,7 @@
 <!--Layout Customized HTML-->
 <div class="jumbotron">
-  <h1 class="display-4 text-center"><img src="assets/images/Logomakr3.png">Tech Cloud</h1>
-  	<p class="lead- text-center">Latest Tech News & Industry Updates</p>
+  <h1 class="display-4 text-center"><img src="assets/images/Logomakr3.png">Tech Cloud <img id="cloud" src="assets/images/cloud5.png"></h1>
+  	<p class="lead- text-center" id="bar">Latest Tech News & Industry Updates</p>
   <hr class="my-4">
 </div>
 
@@ -20,7 +20,7 @@
           {{#each note}}
           
           <h2>{{body}}</h2>
-
+        
         <form action="/deletecomment/{{_id}}/{{../_id}}" method="POST">
               <button type="submit" class="btn btn-primary">Delete</button>
         </form>
@@ -34,7 +34,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Comment</label>
-            <input type="text" name="body" class="form-control" id="exampleInputPassword1" placeholder="Enter comments">
+            <input type="text" name="body" class="form-control" id="input" placeholder="Enter comments">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>

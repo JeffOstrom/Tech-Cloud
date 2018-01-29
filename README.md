@@ -5,7 +5,7 @@ Synopsis
 
 - This web app gives users the freedom to scrape current news from website www.techcrunch.com
 
-- Go read some news! Check it out! https://jeffostrom.github.io/mongo-scrape/
+- Go read some news! Check it out! https://sleepy-oasis-90534.herokuapp.com/
 
 Built With
 -----------------------------------------------------------------------------
@@ -18,6 +18,8 @@ Built With
 - Handlebars 
 
 - Cheerio
+
+- Heroku: mLab Provisions
 
 Resources
 -----------------------------------------------------------------------------

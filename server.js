@@ -50,7 +50,7 @@ db.once("open", function() {
 
 // Routes
 // ======
-var routes = require("./controllers/home.js");
+var routes = require("./controllers/routes.js");
 APP.use(routes)
 
 

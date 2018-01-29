@@ -48,35 +48,78 @@ router.get("/", function(req, res) {
 
     });
     // Tell the browser that we finished scraping the text
-  res.render("index", data);
+    // Grab every doc in the Articles array
+  Article.find({}).limit(15)
+  .populate("note")
+  .exec(function(error, articles) {
+
+      res.render('index', {articles:articles});
+    })
   });
-  
 });
 
+// New note creation via POST route
+router.post("/comment/:id", function(req, res) {
+  // Use our Note model to make a new note from the req.body
+  var newNote = new Note(req.body);
+  // Save the new note to mongoose
+  newNote.save(function(error, doc) {
+    // Send any errors to the browser
+    if (error) {
+      res.send(error);
+    }
+    // Otherwise
+    else {
+      // Find our user and push the new note id into the User's notes array
+      Article.findOneAndUpdate({"_id":req.params.id}, { $push: { "note": doc._id } }, { new: true }, function(err, newdoc) {
+        // Send any errors to the browser
+        if (err) {
+          res.send(err);
+        }
+        // Or send the newdoc to the browser
+        else {
+          res.redirect("/");
+        }
+      });
+    }
+  });
+});
 
-// router.get("/index", function(req, res) {
-//   // Handlebars requires an object to be sent to the index handlebars file.
+//Delete comment
+router.post("/deletecomment/:noteid/:articleid", function(req, res) {
+  // Use our Note model to make a new note from the req.body
+  Note.remove({"_id":req.params.noteid}, function(err, doc){
 
-//   // 3. Loop through the animals, and send those that are not pets to the index handlebars file.
-//   var data = {
-//     anims: []
-//   };
+    if (err) {
+      res.redirect("/");
+     }
 
-//   for (var i = 0; i < animals.length; i += 1) {
-//     // Get the current animal.
-//     var currentAnimal = animals[i];
-
-//     // Check if this animal is a pet.
-//     if (!currentAnimal.pet) {
-//       // If not, push it into our data.anims array.
-//       data.anims.push(currentAnimal);
-//     }
-//   }
-
-//   res.render("index", data);
-// });
+     Article.findOneAndUpdate({"_id":req.params.articleid}, { $pull: { "note": doc._id } }, { new: true })
+     .exec(function(err, doc){
+        // Send any errors to the browser
+        if (err) {
+          res.send(err);
+        }
+        // Or send the newdoc to the browser
+        else {
+          res.redirect("/");
+        }
+      });
 
 
+  });
+      // Find our user and push the new note id into the User's notes array
+      // Article.findOneAndUpdate({"_id":req.params.id}, { $push: { "note": doc._id } }, { new: true }, function(err, newdoc) {
+      //   // Send any errors to the browser
+      //   if (err) {
+      //     res.send(err);
+      //   }
+      //   // Or send the newdoc to the browser
+      //   else {
+      //     res.redirect("/");
+      //   }
+      // });
+});
 
 
 

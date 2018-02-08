@@ -16,24 +16,31 @@ h1{
 p{
 	color: black;
 }
+
 text-center{
 	color: white;
 }
+
 /*Jumbotron background layout */
 .jumbotron{
 	background: rgb(37, 36, 36);
 }
+
 /* TC logo sizing */
 img{
 	width: 15%;
 }
 
+/*Below header font*/
 #bar{
 	color: gray;
 }
+
+/*Footer cloud logo*/
 #cloud{
 	width:4%;
 }
+
 /*footer logo*/
 #cloud2{
 	width:2%;
